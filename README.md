@@ -19,6 +19,17 @@ Primeiro, você necessita ter o Serverless instalado:
 Depois é necessário configurar as credentiais da AWS no Serverless, conforme passo-a-passo no link: https://www.serverless.com/framework/docs/providers/aws/guide/credentials
 
 
+### Instalar o projeto
+
+Clonar o repositório
+
+`git clone git@github.com:dedicio/moskit-cf-options-lambda-api.git`
+
+Instalar as dependências
+
+`npm install`
+
+
 ### Configurar environment
 
 Para que seja possível pegar as informações na API da Moskit, é necessário criar um arquivo `.env` com a __API Key__ conforme o template existe no arquivo `.env.template`
@@ -27,9 +38,11 @@ Para que seja possível pegar as informações na API da Moskit, é necessário 
 ### Deploy lambda
 
 Com esses dados configurados, agora é só fazer o deploy da Lambda na AWS, usando o código abaixo:
+
 `serverless deploy`
 
 Caso tudo ocorra corretamente, uma mensagem como essa irá aparecer:
+
 ```
 ✔ Service deployed to stack moskit-cf-options-lambda-api-dev (135s)
 
@@ -64,6 +77,7 @@ Isso gera um problema para pegar as opções de campos personalizados quando há
 Para resolver isso, é feito um loop usando o `bottleneck` com chamadas à API da Moskit com delay de 500ms entre elas.
 
 Então basta acessar a URL gerada da Lambda passando o ID do campo personalizado:
+
 `https://8hfyu7fdr3.execute-api.us-east-1.amazonaws.com/CF_wkirSDiwWre`
 
 
