@@ -1,0 +1,5 @@
+name: moskit-cf-options-lambda-api
+description: Deploys a Node Express API service that's get Moskit custom field options with Serverless Framework
+keywords: aws, serverless, lambda, node, express, moskit
+repo: https://github.com/dedicio/moskit-cf-options-lambda-api
+license: MIT
